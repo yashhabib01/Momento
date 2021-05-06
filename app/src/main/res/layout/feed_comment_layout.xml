@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp">
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/feed_comment_image"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_account_circle_24" />
+
+    <TextView
+        android:id="@+id/feed_comment_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="TextView"
+        android:textColor="@color/textColor"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/feed_comment_image"
+        app:layout_constraintStart_toEndOf="@+id/feed_comment_image"
+        app:layout_constraintTop_toTopOf="@+id/feed_comment_image" />
+
+    <TextView
+        android:id="@+id/feed_comment_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:text="1 day ago"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/feed_comment_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/feed_comment_name" />
+
+    <TextView
+        android:id="@+id/feed_comment"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:text="It was a humorously perilous business for both of us. For, before we proceed further"
+        android:textSize="10sp"
+        app:layout_constraintEnd_toEndOf="@+id/feed_comment_time"
+        app:layout_constraintStart_toEndOf="@+id/feed_comment_image"
+        app:layout_constraintTop_toBottomOf="@+id/feed_comment_name" />
+
+    <View
+        android:id="@+id/divider5"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="6dp"
+        android:background="?android:attr/listDivider"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/feed_comment" />
+</androidx.constraintlayout.widget.ConstraintLayout>

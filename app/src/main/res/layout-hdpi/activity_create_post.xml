@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CreatePost">
+
+
+    <ImageView
+        android:id="@+id/createPost_imageView"
+        android:layout_width="0dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="8dp"
+        android:src="@drawable/rectangle"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/create_progress_bar" />
+
+    <ImageView
+        android:id="@+id/create_pst_back"
+        android:layout_width="21dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="12dp"
+        android:padding="4dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/back" />
+
+    <TextView
+        android:id="@+id/textView30"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Create Momento"
+        android:textColor="@color/textColor"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/create_pst_back"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/create_pst_back" />
+
+    <EditText
+        android:id="@+id/createPost_caption"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/text_background"
+        android:hint="Add Caption"
+        android:padding="10dp"
+        android:textColor="@color/textColor"
+        app:layout_constraintEnd_toEndOf="@+id/createPost_imageView"
+        app:layout_constraintStart_toStartOf="@+id/createPost_imageView"
+        app:layout_constraintTop_toBottomOf="@+id/createPost_imageView" />
+
+
+    <EditText
+        android:id="@+id/createPost_location"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/text_background"
+        android:hint="Add Location"
+        android:padding="10dp"
+        android:textColor="@color/textColor"
+        app:layout_constraintEnd_toEndOf="@+id/createPost_caption"
+        app:layout_constraintStart_toStartOf="@+id/createPost_caption"
+        app:layout_constraintTop_toBottomOf="@+id/tag_peple_btn" />
+
+    <LinearLayout
+        android:id="@+id/createPost_post"
+        android:layout_width="163dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/button_background"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="46dp"
+
+
+            android:src="@drawable/ic_baseline_send_24"
+            app:tint="@color/colorPrimary" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:paddingStart="4dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:text="Post"
+            android:textColor="@color/colorPrimary"
+            android:textSize="16sp">
+
+        </TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/createPost_save"
+        android:layout_width="164dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/transparent_btn"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+
+            android:layout_marginStart="46dp"
+            android:src="@drawable/ic_baseline_cloud_download_24"
+            app:tint="@color/buttoncolor" />
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginEnd="30dp"
+            android:gravity="center"
+            android:paddingStart="4dp"
+            android:paddingTop="13dp"
+            android:paddingBottom="13dp"
+            android:text="Save"
+            android:textColor="@color/buttoncolor"
+            android:textSize="16sp"></TextView>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/tag_peple_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/text_background"
+        android:text="Tag People"
+        app:layout_constraintEnd_toEndOf="@+id/createPost_caption"
+        app:layout_constraintStart_toStartOf="@+id/createPost_caption"
+        app:layout_constraintTop_toBottomOf="@+id/createPost_caption" />
+    <ProgressBar
+        android:id="@+id/create_progress_bar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:indeterminateBehavior="repeat"
+        android:indeterminateDuration="10"
+        android:indeterminateOnly="true"
+        android:indeterminateTint="@color/buttoncolor"
+        android:progressBackgroundTintMode="multiply"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView30" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

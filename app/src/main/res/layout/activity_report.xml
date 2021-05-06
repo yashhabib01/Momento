@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ReportActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_horizontal"
+                android:textColor="@color/textColor"
+                android:layout_gravity="center"
+                android:textSize="16dp"
+
+                android:text="Report">
+            </TextView>
+
+        </LinearLayout>
+
+
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <ProgressBar
+        android:id="@+id/report_proogressbar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:visibility="invisible"
+        android:indeterminateOnly="true"
+        android:indeterminateDuration="10"
+        android:indeterminateBehavior="repeat"
+        android:progressBackgroundTintMode="multiply"
+        android:indeterminateTint="@color/buttoncolor"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar2" />
+
+    <TextView
+        android:id="@+id/report_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Report Yash"
+        android:textColor="@color/textColor"
+        android:textSize="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_proogressbar" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="Select the Category"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/report_name" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21">
+
+        <CheckBox
+            android:id="@+id/radio_sexual"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Sexual content" />
+
+        <CheckBox
+            android:id="@+id/radio_violent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Violent or repulsive content" />
+
+        <CheckBox
+            android:id="@+id/radio_hateful"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Hateful or abusive content" />
+
+        <CheckBox
+            android:id="@+id/radio_harmful"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Harmful or dangerous acts" />
+
+        <CheckBox
+            android:id="@+id/radio_spam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Spam or misleading" />
+
+        <CheckBox
+            android:id="@+id/radio_terrisom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Promotes terrorism" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/Report_btn"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="8dp"
+        android:text="Report"
+        android:textColor="@color/colorPrimary"
+        android:background="@drawable/button_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
+</androidx.constraintlayout.widget.ConstraintLayout>
