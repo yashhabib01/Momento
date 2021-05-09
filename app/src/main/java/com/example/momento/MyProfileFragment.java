@@ -121,41 +121,7 @@ public class MyProfileFragment extends Fragment {
         });
 
 
-        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
-       databaseReference.addValueEventListener(new ValueEventListener() {
-           @Override
-           public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-               int follow = (int) (snapshot.child("following").getChildrenCount());
-               int followers = (int) (snapshot.child("followers").getChildrenCount());
-               int posts = (int) (snapshot.child("posts").getChildrenCount() );
-
-               follow_text.setText(String.valueOf(follow));
-               followers_text.setText(String.valueOf(followers));
-               post_num.setText(String.valueOf(posts));
-
-               if(snapshot.exists() && snapshot.getChildrenCount() > 0 ){
-                   Map<String,Object> map = (Map<String,Object>) snapshot.getValue();
-
-                   if(map.get("Name") != null){
-                       name.setText(map.get("Name").toString());
-                   }
-                   if(map.get("Location") != null){
-                       address.setText(map.get("Location").toString());
-                   }
-                   if(map.get("AboutMe") != null){
-                        about_me.setText(map.get("AboutMe").toString());
-                   }if(map.get("ProfileImage") != null){
-                       Glide.with(getContext()).load(map.get("ProfileImage").toString()).apply(new RequestOptions().placeholder(R.drawable.ic_account_circle_24)).into(userImage);
-                   }
-               }
-           }
-
-           @Override
-           public void onCancelled(@NonNull DatabaseError error) {
-
-           }
-       });
 
 
 
@@ -177,6 +143,46 @@ public class MyProfileFragment extends Fragment {
             getActivity().startActivity(intent);
         }
     });
+
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid());
+        databaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+
+                int follow = (int) (snapshot.child("following").getChildrenCount());
+                int followers = (int) (snapshot.child("followers").getChildrenCount());
+                int posts = (int) (snapshot.child("posts").getChildrenCount() );
+
+                follow_text.setText(String.valueOf(follow));
+                followers_text.setText(String.valueOf(followers));
+                post_num.setText(String.valueOf(posts));
+
+                if(snapshot.exists() && snapshot.getChildrenCount() > 0 ){
+                    Map<String,Object> map = (Map<String,Object>) snapshot.getValue();
+
+                    if(map.get("Name") != null){
+                        name.setText(map.get("Name").toString());
+                    }
+                    if(map.get("Location") != null){
+                        address.setText(map.get("Location").toString());
+                    }
+                    if(map.get("AboutMe") != null){
+                        about_me.setText(map.get("AboutMe").toString());
+                    }if(map.get("ProfileImage") != null){
+                        Glide.with(getActivity()).load(map.get("ProfileImage").toString()).apply(new RequestOptions().placeholder(R.drawable.ic_account_circle_24)).into(userImage);
+
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+
     }
 
     private  void setFragment(Fragment fragment){
