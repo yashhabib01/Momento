@@ -1,6 +1,6 @@
 # Momento
 <h1>Splash Screen</h1>
-<img  widht=400  height=500 src="https://user-images.githubusercontent.com/75259953/117421781-772ac400-aee4-11eb-8a3e-6766f2d6fe95.jpg">
+<img  widht=400  height=500 src="https://user-images.githubusercontent.com/75259953/119100171-4915ab80-b9dd-11eb-94f7-ab2eed66991c.png">
 
 <h1>Sing In</h1>
 <img widht=400 height=500 src="https://user-images.githubusercontent.com/75259953/117423086-eead2300-aee5-11eb-92c6-b5c1e71eb067.jpg" />
