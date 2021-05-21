@@ -42,7 +42,7 @@
         android:layout_marginTop="60dp"
         android:layout_marginEnd="24dp"
         android:background="@drawable/button_background"
-        android:text="Sing In"
+        android:text="Sign In"
         android:textColor="@color/colorPrimary"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
